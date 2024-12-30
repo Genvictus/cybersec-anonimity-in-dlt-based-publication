@@ -1,0 +1,23 @@
+@startuml token-mixing-scheme
+
+entity PrimaryIdentity
+entity ReviewReaders
+card ReviewToken
+process DelegationMixingService
+process TokenMixingService
+
+artifact DelegatedIdentity {
+    entity SingleUseIdentity
+    card DelegationToken
+}
+
+top to bottom direction
+PrimaryIdentity --> DelegationMixingService : Create delegation token
+DelegationMixingService --> DelegationToken : Delegation token claimed by single-use identity
+DelegatedIdentity --> TokenMixingService    : Single-use identity uses delegation token\nas verification to transfer review tokens
+TokenMixingService ..> PrimaryIdentity      : Review tokens can be claimed\nby primary identity anonymously
+
+ReviewReaders . ReviewToken
+ReviewToken .> DelegatedIdentity            : Review readers give review tokens\nto the single-use identity
+
+@enduml

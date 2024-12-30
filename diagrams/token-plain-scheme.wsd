@@ -1,0 +1,11 @@
+@startuml token-plain-scheme
+
+entity PrimaryIdentity
+entity ReviewReaders
+card ReviewToken
+
+top to bottom direction
+ReviewReaders . ReviewToken
+ReviewToken .> PrimaryIdentity  : Review readers give review tokens\nto the reviewer's primary identity
+
+@enduml

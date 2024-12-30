@@ -1,0 +1,2 @@
+= Conclusion
+This study explored the possibility to provide an anonymity setting through the use of _unlinkable_ concept based on mixing services. However, the setting for anonymity in the context of peer review requires the reviewer to proof that the reviewer has the required permission to give the review. With further analysis, the same mixing technology can be used to provide a method to "delegate" the permission in the same _unlinkable_ way.
